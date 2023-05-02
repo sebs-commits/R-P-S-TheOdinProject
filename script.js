@@ -5,24 +5,27 @@ function getComputerChoice(choices){
 let rock = document.getElementById('btnRock')
 let paper = document.getElementById('btnPaper')
 let scissors = document.getElementById('btnScissor')
-
+let score = 0;
 
 computerSelection = getComputerChoice(["rock", "paper", "scissors"]);
-
-rock.onclick = function(){
-    rock = "rock"
-    console.log(computerSelection)
-    if (rock === computerSelection){
-        document.write('Tie!')
-    }
-    else if(computerSelection === "scissors"){
-        document.write('You win')
-        
-    }
-    else{
-        document.write("You lose")
+function playRound(){
+    rock.onclick = function(){
+        rock = "rock"
+        console.log(computerSelection)
+        if (rock === computerSelection){
+            document.write('Tie!')
+        }
+        else if(computerSelection === "scissors"){
+            document.write('You win')
+            score++
+        }
+        else{
+            document.write("You lose")
+        }
     }
 }
+
+document.write(score)
 // function playRound(playerSelection, computerSelection){
 //     switch(playerSelection.toLowerCase()){
 //         case "rock":
