@@ -5,7 +5,7 @@ function getComputerChoice(choices){
 let rock = document.getElementById('btnRock')
 let paper = document.getElementById('btnPaper')
 let scissors = document.getElementById('btnScissor')
-let score = 0;
+//let score = 0;
 
 computerSelection = getComputerChoice(["rock", "paper", "scissors"]);
 function playRound(){
@@ -13,19 +13,18 @@ function playRound(){
         rock = "rock"
         console.log(computerSelection)
         if (rock === computerSelection){
-            document.write('Tie!')
+            document.getElementById('placeholder').innerHTML = "Its a tie!"
         }
         else if(computerSelection === "scissors"){
-            document.write('You win')
-            score++
+            document.getElementById('placeholder').innerHTML = "You win!"
         }
         else{
-            document.write("You lose")
+            document.getElementById('placeholder').innerHTML = "You lose!"
         }
     }
 }
-
-document.write(score)
+playRound()
+//document.write(score)
 // function playRound(playerSelection, computerSelection){
 //     switch(playerSelection.toLowerCase()){
 //         case "rock":
