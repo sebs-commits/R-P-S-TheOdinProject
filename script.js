@@ -5,71 +5,74 @@ function getComputerChoice(choices){
 let rock = document.getElementById('btnRock')
 let paper = document.getElementById('btnPaper')
 let scissors = document.getElementById('btnScissor')
-//let score = 0;
-
+let score = 0;
+let roundsPlayed = 0;
 computerSelection = getComputerChoice(["rock", "paper", "scissors"]);
 function playRound(){
+    resetGame()
     rock.onclick = function(){
         rock = "rock"
-        console.log(computerSelection)
+        roundsPlayed++
         if (rock === computerSelection){
             document.getElementById('placeholder').innerHTML = "Its a tie!"
         }
-        else if(computerSelection === "scissors"){
+        else if(computerSelection === 'scissors'){
             document.getElementById('placeholder').innerHTML = "You win!"
         }
         else{
             document.getElementById('placeholder').innerHTML = "You lose!"
         }
     }
+    paper.onclick = function(){
+        paper = "paper"
+        roundsPlayed++
+        if (paper === computerSelection){
+            document.getElementById('placeholder').innerHTML = "Its a tie!"
+        }
+        else if(computerSelection === "rock"){
+            document.getElementById('placeholder').innerHTML = "You win!"
+        }
+        else{
+            document.getElementById('placeholder').innerHTML = "You lose!"
+        }
+    }
+    scissors.onclick = function(){
+        scissors = "scissors"
+        roundsPlayed++
+        if (scissors === computerSelection){
+            document.getElementById('placeholder').innerHTML = "Its a tie!"
+        }
+        else if(computerSelection === 'paper'){
+            document.getElementById('placeholder').innerHTML = "You win!"
+        }
+        else{
+            document.getElementById('placeholder').innerHTML = "You lose!"
+        }
+        console.log(roundsPlayed)
+    }
 }
-playRound()
-//document.write(score)
-// function playRound(playerSelection, computerSelection){
-//     switch(playerSelection.toLowerCase()){
-//         case "rock":
-//             if(computerSelection === "rock"){
-//                 return "It's a tie!";
-//             }
-//             else if(computerSelection === "paper"){
-//                 return "You lose! Paper beats rock.";
-//             }
-//             else{
-//                 return "You win! Rock beats scissors.";
-//             }
-//             break;
-//         case "paper":
-//             if(computerSelection === "rock"){
-//                 return "You win! Paper beats rock.";
-//             }
-//             else if(computerSelection === "paper"){
-//                 return "It's a tie!";
-//             }
-//             else{
-//                 return "You lose! Scissors beats paper.";
-//             }
-//             break;
-//         case "scissors":
-//             if(computerSelection === "rock"){
-//                 return "You lose! Rock beats scissors.";
-//             }
-//             else if(computerSelection === "paper"){
-//                 return "You win! Scissors beats paper.";
-//             }
-//             else{
-//                 return "It's a tie!";
-//             }
-//             break;
-//     }
-// }
+// Function to reset all the variables
+function resetGame(){
+    rock.disabled = false
+    scissors.disabled = false
+    paper.disabled = false
+    if(roundsPlayed >= 5){
+        roundsPlayed = 0
+        rock.disabled = true
+        scissors.disabled = true
+        paper.disabled = true
+    }
+}
+function resetPlaceholder(){
+    document.getElementById('placeholder').innerHTML = ""
+}
 
-
-// function game(playRound){
-    
-//     for(i=0; i < 5; i++){
-//         console.log(playRound(playerSelection, computerSelection));
-//     }
-// }
-
-//console.log(playRound(playerSelection, computerSelection));
-  
+for (let i = 1; i <= 5; i++) {
+    playRound()
+}
+rock.onclick = function (){
+    for (let i = 1; i <= 5; i++) {
+        playRound()
+        resetPlaceholder()
+    }
+}
