@@ -1,28 +1,38 @@
-*{
+* {
     margin: 0;
 }
-body{
-    background: #0F2027;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+body {
+    background: #0F2027;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
-.main-container{
-    //background-color: black;
+
+.main-container {
+    /* background-color: black; */
 }
-.button-container{
+
+.button-container {
     display: flex;
     justify-content: center;
 }
-.btn-choice{
+
+.btn-choice {
     margin: 3em;
 }
-.btn-reset-container{
+
+.btn-reset-container {
     display: flex;
     justify-content: center;
     margin: 2em;
 }
-.btn-choice, .btn-reset {
+
+.btn-choice,
+.btn-reset {
     cursor: pointer;
     padding: 17px 40px;
     border-radius: 10px;
@@ -33,16 +43,16 @@ body{
     transition: all .3s ease;
     box-shadow: rgb(201, 46, 70) 0px 10px 0px 0px;
     color: hsl(0, 0%, 100%);
-   }
-   
-   button:hover {
+}
+
+button:hover {
     box-shadow: rgb(201, 46, 70) 0px 7px 0px 0px;
-   }
-   
-   button:active {
+}
+
+button:active {
     background-color: rgb(255, 56, 86);
     /*50, 168, 80*/
     box-shadow: rgb(201, 46, 70) 0px 0px 0px 0px;
     transform: translateY(5px);
     transition: 200ms;
-   }
+}
