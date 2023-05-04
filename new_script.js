@@ -31,11 +31,13 @@ function playRound(playerSelection) {
     rock.disabled = true;
     scissors.disabled = true;
     paper.disabled = true;
-    document.getElementById("final-score").innerHTML = "Final score: " + playerScore;
+    document.getElementById("final-score").innerHTML = "\nPlayer score: " + playerScore + "\nComputer Score: " + computerScore;
     if(playerScore > computerScore){
         document.getElementById("placeholder").innerHTML = "You won the game!";
       } else {
         document.getElementById("placeholder").innerHTML = "You lost the game!";
+      } if (playerScore === computerScore){
+        document.getElementById("placeholder").innerHTML = "The game is a tie!"
       }
   }
   
@@ -46,7 +48,8 @@ function resetGame() {
   scissors.disabled = false;
   paper.disabled = false;
   roundsPlayed = 0;
-  score = 0;
+  playerScore = 0;
+  computerScore = 0;
   document.getElementById("placeholder").innerHTML = "";
   document.getElementById("final-score").innerHTML = "";
 }
