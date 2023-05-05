@@ -11,7 +11,10 @@ body {
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
-
+.main-title{
+    text-align: center;
+    margin: 4em auto 0 auto;
+}
 .main-container {
     /* background-color: black; */
 }
@@ -37,22 +40,22 @@ body {
     padding: 17px 40px;
     border-radius: 10px;
     border: 0;
-    background-color: rgb(255, 56, 86);
+    background-color: #2C5364;
     letter-spacing: 1.5px;
     font-size: 15px;
     transition: all .3s ease;
-    box-shadow: rgb(201, 46, 70) 0px 10px 0px 0px;
+    box-shadow: #0F2027 0px 10px 0px 0px;
     color: hsl(0, 0%, 100%);
 }
 
 button:hover {
-    box-shadow: rgb(201, 46, 70) 0px 7px 0px 0px;
+    box-shadow: #0F2027 0px 7px 0px 0px;
 }
 
 button:active {
-    background-color: rgb(255, 56, 86);
+    background-color: #2C5364;
     /*50, 168, 80*/
-    box-shadow: rgb(201, 46, 70) 0px 0px 0px 0px;
+    box-shadow: #0F2027 0px 0px 0px 0px;
     transform: translateY(5px);
     transition: 200ms;
 }
