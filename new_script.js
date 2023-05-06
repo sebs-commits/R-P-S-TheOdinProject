@@ -10,6 +10,7 @@ function getComputerChoice(choices) {
   return choices[Math.floor(Math.random() * choices.length)];
 }
 
+
 function playRound(playerSelection) {
   computerSelection = getComputerChoice(["rock", "paper", "scissors"]);
   roundsPlayed++;
@@ -39,6 +40,22 @@ function playRound(playerSelection) {
       } if (playerScore === computerScore){
         document.getElementById("placeholder").innerHTML = "The game is a tie!"
       }
+      // Below creates the reset button
+      var resetBtn = document.createElement("BUTTON");
+      var resetBtnDiv = document.getElementById("reset-btn-container")
+      
+      resetBtn.setAttribute("id", "reset")
+      resetBtn.setAttribute("class", "btn-reset")
+      resetBtn.textContent = "Play Again!"
+      // var t = document.createTextNode("Play Again!");
+      // x.appendChild(t);
+      //document.body.appendChild(x);
+      //resetBtn.addEventListener("click", resetGame);
+      resetBtnDiv.appendChild(resetBtn)
+      resetBtn.addEventListener("click", function(){
+        resetGame()
+        resetBtn.remove()
+      })
   }
   
 }
@@ -66,4 +83,5 @@ scissors.addEventListener("click", function () {
   playRound("scissors");
 });
 
-document.getElementById("reset").addEventListener("click", resetGame);
+
+// x.addEventListener("click", resetGame);
