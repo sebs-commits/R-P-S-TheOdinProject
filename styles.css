@@ -1,6 +1,7 @@
 * {
     margin: 0;
     color: white;
+    box-sizing: border-box;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
@@ -15,7 +16,7 @@ body {
 }
 .main-title, .text-container{
     text-align: center;
-    margin: 4em auto 0 auto;
+    margin: 4em auto 0.5em auto;
 }
 .main-container {
     /* background-color: black; */

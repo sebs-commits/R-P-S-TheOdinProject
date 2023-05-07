@@ -10,7 +10,6 @@ function getComputerChoice(choices) {
   return choices[Math.floor(Math.random() * choices.length)];
 }
 
-
 function playRound(playerSelection) {
   computerSelection = getComputerChoice(["rock", "paper", "scissors"]);
   roundsPlayed++;
@@ -32,7 +31,7 @@ function playRound(playerSelection) {
     rock.disabled = true;
     scissors.disabled = true;
     paper.disabled = true;
-    document.getElementById("final-score").innerHTML = "\nPlayer score: " + playerScore + "\nComputer Score: " + computerScore;
+    document.getElementById("final-score").innerHTML = "\nPlayer score: " + playerScore + " Computer Score: " + computerScore;
     if(playerScore > computerScore){
         document.getElementById("placeholder").innerHTML = "You won the game!";
       } else {
@@ -47,10 +46,7 @@ function playRound(playerSelection) {
       resetBtn.setAttribute("id", "reset")
       resetBtn.setAttribute("class", "btn-reset")
       resetBtn.textContent = "Play Again!"
-      // var t = document.createTextNode("Play Again!");
-      // x.appendChild(t);
-      //document.body.appendChild(x);
-      //resetBtn.addEventListener("click", resetGame);
+      
       resetBtnDiv.appendChild(resetBtn)
       resetBtn.addEventListener("click", function(){
         resetGame()
@@ -82,6 +78,3 @@ paper.addEventListener("click", function () {
 scissors.addEventListener("click", function () {
   playRound("scissors");
 });
-
-
-// x.addEventListener("click", resetGame);
